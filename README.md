@@ -2,34 +2,24 @@
  
 ##Learning Competencies 
 
-##Summary 
-
- An **anagram** is a word formed by rearranging the letters of another word, e.g., *iceman* is an anagram of *cinema*.
-
-We're going to write a method called `anagrams_for` that takes as its input a word and an array of words, representing a dictionary, and returns an array consisting of all the anagrams of the input word.
-
-You should look back and possibly re-use some of the code you wrote in your `is_anagram?` method.  You may or may not re-use the method itself, but at the very least you'll want the code handy for reference.
-
-## External Resources
-
-* [Anagram on Wikipedia](http://en.wikipedia.org/wiki/Anagram)
-
-## Learning Goals
-
 * Modeling a simple real-world procedure in Ruby
 * Method definition, arguments, and return values
 * Looping
 * Basic performance analysis
 
-## As you're coding, ask yourself...
+##Summary 
 
-* Do I have a clear understanding of how this procedure works?
-* Am I stuck because I know what I want to do but don't know how to say it in Ruby?
-* Am I stuck because my understanding of how anagrams work is to fuzzy or mistaken?
+An **anagram** is a word formed by rearranging the letters of another word, e.g., *iceman* is an anagram of *cinema*.
 
-## Objectives
+We're going to write a method called `anagrams_for` that takes as its input a word and an array of words, representing a dictionary, and returns an array consisting of all the anagrams of the input word.
 
-### Pseudocode Implementation of `anagrams_for`
+You should look back and possibly re-use some of the code you wrote in your `is_anagram?` method.  You may or may not re-use the method itself, but at the very least you'll want the code handy for reference.
+
+
+ 
+
+##Releases
+###Release 0 : Pseudocode Implementation of `anagrams_for`
 
 Before you start writing a single line of Ruby code, sit down and ask yourself, "Given a word and a dictionary, could I create a list of anagrams of that word by hand, tediousness aside?"
 
@@ -37,7 +27,7 @@ Your `anagrams_for` method will be a model of you performing this task, so the m
 
 Write pseudocode that outlines your own mental procedure in a way that's easy for a human to both understand and translate into their favorite programming language.
 
-### Ruby Implementation of `anagrams_for`
+###Release 1 : Ruby Implementation of `anagrams_for`
 
 Write a method called `anagrams_for` that takes as its input a word and an array of words, representing a dictionary, and returns an array consisting of all the anagrams of the input word.  Like `is_anagram?`, the method should be *case insensitive*.  Remember, a word is always an anagram of itself.
 
@@ -65,16 +55,13 @@ anagrams_for('etlsm', dictionary)   # => ['smelt', 'melts', 'etlsm']
 anagrams_for('unicorn', dictionary) # => []
 ```
 
-## After you're done, ask yourself...
-
-* Is my program doing any duplicate work?  Is there a way to remove that duplicate work?
-* Am I iterating over the dictionary multiple times or just once?
-* If I'm re-using `is_anagram?`, what happens if I call `is_anagram?(word1, word2)` and then later call `is_anagram?(word1, word100)`?  Is there any duplicate work?
- 
-
-##Releases
-###Release 0 
-
 ##Optimize Your Learning 
 
+Consider the following:
+  * Is my program doing any duplicate work?  Is there a way to remove that duplicate work?
+  * Am I iterating over the dictionary multiple times or just once?
+  * If I'm re-using `is_anagram?`, what happens if I call `is_anagram?(word1, word2)` and then later call `is_anagram?(word1, word100)`?  Is there any duplicate work?
+
 ##Resources
+
+* [Anagram on Wikipedia](http://en.wikipedia.org/wiki/Anagram)
