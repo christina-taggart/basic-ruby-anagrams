@@ -1,9 +1,7 @@
 def anagrams_for(word, dictionary)
-  anagrams = []
-  dictionary.each do |w|
-    anagrams << w if word.downcase.chars.sort.join == w.downcase.chars.sort.join
+  dictionary.select do |w|
+    word.downcase.chars.sort.join == w.downcase.chars.sort.join
   end
-  anagrams
 end
 
 # The dictionary is just an arbitrary collection of strings.
