@@ -12,3 +12,13 @@ Iterate over dict
 
 Return array of matches
 =end
+
+dict = ['acres', 'cares', 'Cesar', 'races', 'smelt', 'melts', 'etlsm']
+def anagrams_for(word, dictionary)
+	split_word = word.downcase.split('').sort
+	dictionary.select{|entry| entry.downcase.split('').sort == split_word}
+end
+
+p anagrams_for('acres', dict)   == ['acres', 'cares', 'Cesar', 'races']
+p anagrams_for('ACRES', dict)   == ['acres', 'cares', 'Cesar', 'races']
+p anagrams_for('Cesar', dict)   == ['acres', 'cares', 'Cesar', 'races']
