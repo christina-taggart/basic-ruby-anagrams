@@ -23,12 +23,14 @@ def anagrams_for(word, dictionary)
   anagrams = []
   canonical_word = canonical(word)
   dictionary.each do |word|
-    canonical(word)
+    anagrams << word if canonical(word) == canonical_word
   end
+  anagrams
 end
 
 
 # driver code
+
 p is_anagram?("cinema", "iceman") == true
 p is_anagram?("Cinema", "iceman") == true
 p is_anagram?("person", "pencil") == false
@@ -37,3 +39,11 @@ p is_anagram?("Cinema", "iceman") == true
 
 p canonical("cinema") == "aceimn"
 p canonical("Cinema") == "aceimn"
+
+dictionary = ['acres', 'cares', 'Cesar', 'races', 'smelt', 'melts', 'etlsm']
+p anagrams_for('acres', dictionary) == ['acres', 'cares', 'Cesar', 'races']
+p anagrams_for('ACRES', dictionary) == ['acres', 'cares', 'Cesar', 'races']
+p anagrams_for('Cesar', dictionary)   == ['acres', 'cares', 'Cesar', 'races']
+p anagrams_for('sacre', dictionary)   == ['acres', 'cares', 'Cesar', 'races']
+p anagrams_for('etlsm', dictionary)   == ['smelt', 'melts', 'etlsm']
+p anagrams_for('unicorn', dictionary) == []
