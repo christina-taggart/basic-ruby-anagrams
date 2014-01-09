@@ -1,19 +1,12 @@
 # Generates a dictionary array from dictionary.txt:
 my_dictionary = []
-File.open("dictionary.txt", "r") do |infile|
-  while (line = infile.gets)
-    my_dictionary << line.split
-  end
+File.open("dictionary.txt").each_line do |line|
+  my_dictionary << line.rstrip
 end
-my_dictionary.flatten!
 
 #-----Anagram methods!-----
 def anagrams_for(word, dictionary)
-  anagrams = []
-  dictionary.each do |dictionary_word|
-    anagrams << dictionary_word if is_anagram?(dictionary_word, word)
-  end
-  anagrams
+  dictionary.select {|dictionary_word| is_anagram?(dictionary_word, word) }
 end
 
 def canonical(string)
